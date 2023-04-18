@@ -555,7 +555,7 @@ done`;
 	// being built.
 	let repoFullName = process.env.GITHUB_REPOSITORY as string;
 	if (github.context.payload.pull_request) {
-		repoFullName = github.context.payload.pull_request.head.repo.full_name;
+		repoFullName = github.context.payload.pull_request.base.repo.full_name;
 	}
 	const headRef = process.env.GITHUB_HEAD_REF as string;
 	const commitRef = headRef || github.context.sha;
